@@ -15,6 +15,9 @@
     "moduleResolution": "node",
     // позволяет работать с пакетами, которые используют common js как с обычными пакетами с помощью import. Без флага - результат undefined, с флагом [object Object]
     "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
     "esModuleInterop": true,
     // некоторые библиотеки на node не поддерживают import default и нам приходится писать * as - который явно сообщает, что мы хотим использовать все из этого пакета. Этот флаг нам дает возможность этого НЕ делать
     "allowSyntheticDefaultImports": true
