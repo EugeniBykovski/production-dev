@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    // то, куда производится сборка
+    "outDir": "./dist/",
+    // не позволяет нам писать код БЕЗ явного указания типа
+    "noImplicitAny": true,
+    // сюда указываем модульную систему / ESNext / CommonJS и т.д. - различные виды модульной сборки
+    "module": "ESNext",
+    // в target указываем версию, в которую код будет компилироваться
+    "target": "es5",
+    "jsx": "react-jsx",
+    // позволяет компилятору обрабатывать не только TS файлы, но и JS 
+    "allowJs": true,
+    // определяет то, какие импорты тут будут (node / classic)
+    "moduleResolution": "node",
+    // позволяет работать с пакетами, которые используют common js как с обычными пакетами с помощью import. Без флага - результат undefined, с флагом [object Object]
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    // некоторые библиотеки на node не поддерживают import default и нам приходится писать * as - который явно сообщает, что мы хотим использовать все из этого пакета. Этот флаг нам дает возможность этого НЕ делать
+    "allowSyntheticDefaultImports": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
