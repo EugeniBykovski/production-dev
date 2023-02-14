@@ -1,7 +1,16 @@
 .Button {
-  cursor: pointer;
+  display: flex;
+  margin: 0 auto;
+  padding: .3rem 1rem;
+
+  background-color: var(--secondary-color);
+  outline: none;
+  border: none;
+  border-radius: .25rem;
   color: var(--bg-color);
+  cursor: pointer;
 }
+
 
 .clear {
   padding: 0;
