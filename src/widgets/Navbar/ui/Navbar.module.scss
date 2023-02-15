@@ -11,8 +11,19 @@
 
 .links {
   margin-left: auto;
+  font-weight: 500;
+
+  a {
+    text-decoration: none;
+    transition: all .3s;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
 }
 
 .mainLink {
   margin-right: 15px;
+  text-decoration: none;
 }
