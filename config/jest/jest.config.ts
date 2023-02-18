@@ -1,4 +1,4 @@
-import path from 'path'
+import path from 'path';
 
 export default {
   // All imported modules in your tests should be mocked automatically
