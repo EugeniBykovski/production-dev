@@ -4,5 +4,6 @@
   "Страница не найдена": "Page not found",
   "Произошла непредвиденная ошибка": "An unexpected error occurred",
   "Обновить страницу": "Reload this page",
-  "Вызвать ошибку": "Throw Error"
+  "Вызвать ошибку": "Throw Error",
+  "Войти": "Login"
 }

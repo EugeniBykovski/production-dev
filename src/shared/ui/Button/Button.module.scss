@@ -11,12 +11,18 @@
   cursor: pointer;
 }
 
+.clearInverted,
 .clear {
   padding: 0;
 
   border: none;
   background: none;
   outline: none;
+}
+
+.clearInverted {
+  margin: 0;
+  color: var(--inverted-primary-color);
 }
 
 .outline {
