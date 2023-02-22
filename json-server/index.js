@@ -13,9 +13,7 @@ server.use(async (req, res, next) => {
 })
 
 server.use((req, res, next) => {
-  if (!req.headers.authorization) {
-    return res.status(403).json({ message: 'Auth is Error' })
-  }
+  if (!req.headers.authorization) res.status(403).json({ message: 'Auth is Error' })
   next()
 })
 
@@ -29,9 +27,7 @@ server.post('/login', (req, res) => {
   const userFromBd = users.find(user => user.username === username && user.password === password)
 
   if (userFromBd) res.json(userFromBd)
-
   return res.status(403).json({ message: 'Auth Error' })
 })
 
-// server starting
 server.listen(PORT, () => console.log(`Server is running on ${PORT} port`))
