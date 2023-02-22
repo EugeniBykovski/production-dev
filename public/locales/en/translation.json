@@ -7,5 +7,7 @@
   "Вызвать ошибку": "Throw Error",
   "Войти": "Login",
   "увеличение": "increment",
-  "уменьшение": "decrement"
+  "уменьшение": "decrement",
+  "Введите имя": "Your username",
+  "Введите пароль": "Your password"
 }
