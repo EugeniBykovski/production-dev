@@ -11,7 +11,6 @@ const MainPage = () => {
   return (
     <div>
       {t('Главная')}
-      <Input value={value} onChange={onChange} placeholder='Введите текст' />
     </div>
   )
 }
