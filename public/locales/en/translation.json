@@ -5,5 +5,7 @@
   "Произошла непредвиденная ошибка": "An unexpected error occurred",
   "Обновить страницу": "Reload this page",
   "Вызвать ошибку": "Throw Error",
-  "Войти": "Login"
+  "Войти": "Login",
+  "увеличение": "increment",
+  "уменьшение": "decrement"
 }
