@@ -6,8 +6,11 @@
   "Обновить страницу": "Reload this page",
   "Вызвать ошибку": "Throw Error",
   "Войти": "Login",
+  "Выйти": "Logout",
   "увеличение": "increment",
   "уменьшение": "decrement",
   "Введите имя": "Your username",
-  "Введите пароль": "Your password"
+  "Введите пароль": "Your password",
+  "Форма авторизации": "Authorization form",
+  "Вы ввели некорректный логин или пароль": "You entered an invalid login or password"
 }

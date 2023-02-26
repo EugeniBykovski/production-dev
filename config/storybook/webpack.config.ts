@@ -1,4 +1,4 @@
-import webpack, { RuleSetRule } from 'webpack'
+import webpack, { DefinePlugin, RuleSetRule } from 'webpack'
 import path from 'path'
 import { buildCssLoader } from '../build/loaders/buildCssLoaders';
 import { BuildPaths } from '../build/types/config';
@@ -30,6 +30,10 @@ export default ({ config }: { config: webpack.Configuration }) => {
   })
 
   config.module?.rules?.push(buildCssLoader(true)) // for storybook (only dev)
+
+  config.plugins?.push(new DefinePlugin({
+    __IS_DEV__: true
+  }))
 
   return config
 }
