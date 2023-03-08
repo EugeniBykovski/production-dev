@@ -1,5 +1,5 @@
-import React, { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames'
+import React, { MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import { classNames, Mods } from 'shared/lib/classNames/classNames'
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss'
 
@@ -24,7 +24,7 @@ export const Modal = (props: ModalProps) => {
 
   const [isClothing, setIsClothing] = useState(false)
   const [isMounted, setIsMounted] = useState(false)
-  const timerRef = useRef<ReturnType<typeof setTimeout>>()
+  const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>
 
   useEffect(() => {
     if (isOpen) setIsMounted(true)
@@ -56,7 +56,7 @@ export const Modal = (props: ModalProps) => {
     }
   }, [isOpen, onKeyDown])
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cls.opened]: isOpen,
     [cls.isClothing]: isClothing
   }

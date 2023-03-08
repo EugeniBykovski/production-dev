@@ -11,6 +11,7 @@
     "jsx": "react-jsx",
     // позволяет компилятору обрабатывать не только TS файлы, но и JS 
     "allowJs": true,
+    "strict": true,
     // определяет то, какие импорты тут будут (node / classic)
     "moduleResolution": "node",
     // позволяет работать с пакетами, которые используют common js как с обычными пакетами с помощью import. Без флага - результат undefined, с флагом [object Object]

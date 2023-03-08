@@ -11,7 +11,8 @@ export default {
   // cacheDirectory: "/tmp/jest_rs",
 
   globals: {
-    __IS_DEV__: true
+    __IS_DEV__: true,
+    __API__: ''
   },
   clearMocks: true,
   coverageProvider: "v8",
