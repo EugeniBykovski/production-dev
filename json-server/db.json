@@ -25,14 +25,5 @@
       "password": "123"
     }
   ],
-  "profile": { 
-    "firstname": "Mark",
-    "lastname": "Markovich",
-    "age": 25,
-    "currency": "USD",
-    "country": "GB",
-    "city": "London",
-    "username": "",
-    "avatar": "https://media.istockphoto.com/id/476085198/photo/businessman-silhouette-as-avatar-or-default-profile-picture.jpg?s=612x612&w=0&k=20&c=GVYAgYvyLb082gop8rg0XC_wNsu0qupfSLtO7q9wu38="
-  }
+  "profile": {}
 }

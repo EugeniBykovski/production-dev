@@ -12,5 +12,8 @@
   "Введите имя": "Your username",
   "Введите пароль": "Your password",
   "Форма авторизации": "Authorization form",
-  "Вы ввели некорректный логин или пароль": "You entered an invalid login or password"
+  "Вы ввели некорректный логин или пароль": "You entered an invalid login or password",
+  "Укажите валюту": "Specify currency",
+  "Выберете страну": "Choose country"
+
 }
