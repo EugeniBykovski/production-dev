@@ -25,5 +25,11 @@
       "password": "123"
     }
   ],
-  "profile": {}
+  "profile": {
+    "username": "",
+    "lastname": "",
+    "age": 0,
+    "firstname": "",
+    "city": ""
+  }
 }

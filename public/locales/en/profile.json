@@ -11,5 +11,10 @@
   "Ведите имя пользователя": "Your username",
   "Город": "City",
   "Ваш аватар": "Your image",
-  "Ваш возраст": "Your age"
+  "Ваш возраст": "Your age",
+  "Серверная ошибка при сохранении": "Server error when saving",
+  "Некорректный регион": "Incorrect region",
+  "Данные не были указаны": "No data specified",
+  "Имя и фамилия обязательные поля": "First and last name required fields",
+  "Некорректный возраст": "Incorrect age"
 }
