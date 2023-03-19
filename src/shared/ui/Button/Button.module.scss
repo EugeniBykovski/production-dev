@@ -9,6 +9,12 @@
   border-radius: .25rem;
   color: var(--bg-color);
   cursor: pointer;
+
+  &:hover {
+    opacity: .7;
+    fill-opacity: .7;
+    stroke-opacity: .7;
+  }
 }
 
 .clearInverted,

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import cls from './ArticleDetails.module.scss'
-import { memo, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
@@ -14,6 +14,10 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import CalendarIcon from 'shared/assets/icons/calendar.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
+import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 interface ArticleDetailsProps {
   className?: string;
@@ -31,8 +35,21 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   const article = useSelector(getArticleDetailsData)
   const error = useSelector(getArticleDetailsError)
 
+  const renderBlock = useCallback((block: ArticleBlock) => {
+    switch (block.type) {
+      case ArticleBlockType.CODE:
+        return <ArticleCodeBlockComponent key={block.id} className={cls.block} block={block} />
+      case ArticleBlockType.IMAGE:
+        return <ArticleImageBlockComponent key={block.id} className={cls.block} block={block} />
+      case ArticleBlockType.TEXT:
+        return <ArticleTextBlockComponent key={block.id} className={cls.block} block={block} />
+      default: 
+        return null;
+    }
+  }, [])
+
   useEffect(() => {
-    dispatch(fetchArticleById(id))
+    if (__PROJECT__ !== 'storybook') dispatch(fetchArticleById(id))
   }, [dispatch, id])
 
   let content;
@@ -74,6 +91,8 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
           <Icon Svg={CalendarIcon} className={cls.icon} />
           <Text title={article?.createdAt} />
         </div>
+
+        {article?.blocks.map(renderBlock)}
       </>
     )
   }
