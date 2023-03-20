@@ -107,20 +107,25 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
     }
   ],
   "profile": {
-    "username": "",
-    "lastname": "",
-    "age": 0,
-    "firstname": "",
-    "city": ""
+    "username": "kate markova",
+    "lastname": "markova",
+    "age": 25,
+    "firstname": "kate",
+    "city": "London",
+    "country": "GB",
+    "currency": "USD",
+    "avatar": "https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
   }
 }
