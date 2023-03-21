@@ -19,7 +19,9 @@
       "img": "https://www.opc-router.de/wp-content/uploads/2021/03/mongodb_thumbnail.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,6 +102,30 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "text message",
+      "id": "FT_Dl1r"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "user message",
+      "id": "zBc1IOt"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "sdvsfv",
+      "id": "8_4yttG"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "hello, world",
+      "id": "-GVNBW-"
     }
   ],
   "users": [
@@ -118,14 +144,28 @@
       "avatar": "https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
     }
   ],
-  "profile": {
-    "username": "kate markova",
-    "lastname": "markova",
-    "age": 25,
-    "firstname": "kate",
-    "city": "London",
-    "country": "GB",
-    "currency": "USD",
-    "avatar": "https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "username": "kate_markova",
+      "lastname": "markova",
+      "age": 25,
+      "firstname": "kate",
+      "city": "London",
+      "country": "GB",
+      "currency": "USD",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
+    },
+    {
+      "id": "2",
+      "username": "eugeni",
+      "lastname": "markov",
+      "age": 27,
+      "firstname": "eugeni",
+      "city": "Minsk",
+      "country": "GB",
+      "currency": "USD",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
+    }
+  ]
 }

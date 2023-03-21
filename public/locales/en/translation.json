@@ -6,6 +6,7 @@
   "Обновить страницу": "Reload this page",
   "Вызвать ошибку": "Throw Error",
   "Войти": "Login",
+  "Отпрвить": "Send",
   "Выйти": "Logout",
   "увеличение": "increment",
   "уменьшение": "decrement",
@@ -15,5 +16,6 @@
   "Вы ввели некорректный логин или пароль": "You entered an invalid login or password",
   "Укажите валюту": "Specify currency",
   "Выберете страну": "Choose country",
-  "Комментарий отсутствует": "Comment is empty"
+  "Комментарий отсутствует": "Comment is empty",
+  "Введите текст комментария": "Write comment message"
 }
