@@ -1,3 +1,12 @@
 .ArticlesPage {
   min-height: 100%;
 }
+
+.viewsWrapper {
+  display: flex;
+  padding: 1rem 0;
+
+  button {
+    margin: 0;
+  }
+}
