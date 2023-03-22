@@ -1,18 +1,17 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import 'app/styles/index.scss'
-import { Article, ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import ArticleDetailsPage from './ArticleDetailsPage';
+import { Article, ArticleBlockType, ArticleType, ArticleView } from '../../model/types/article';
+import { ArticleList } from './ArticleList';
 
 export default {
-  title: 'pages/ArticleDetailsPage',
-  component: ArticleDetailsPage,
+  title: 'entities/Article/ArticleList',
+  component: ArticleList,
   argTypes: {
     backgroundColor: { control: 'color' },
   }
-} as ComponentMeta<typeof ArticleDetailsPage>;
+} as ComponentMeta<typeof ArticleList>;
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args: any) => <ArticleDetailsPage {...args} />;
+const Template: ComponentStory<typeof ArticleList> = (args: any) => <ArticleList {...args} />;
 
 const article: Article = {
   "id": "1",
@@ -60,10 +59,42 @@ const article: Article = {
   ]
 }
 
-export const Normal = Template.bind({});
-Normal.args = {};
-Normal.decorators = [StoreDecorator({
-  articleDetails: {
-    data: article
-  }
-})]
+export const isLoadingList = Template.bind({});
+isLoadingList.args = {
+  isLoading: true,
+  articles: [],
+  view: ArticleView.LIST
+};
+
+export const isLoadingPlate = Template.bind({});
+isLoadingPlate.args = {
+  isLoading: true,
+  articles: [],
+  view: ArticleView.PLATE
+};
+
+export const arrPlate = Template.bind({});
+arrPlate.args = {
+  isLoading: false,
+  articles: new Array(16)
+    .fill(0)
+    .map((_, index) => ({
+      ...article,
+      id: String(index),
+      key: index
+    })),
+  view: ArticleView.PLATE
+};
+
+export const arrList = Template.bind({});
+arrList.args = {
+  isLoading: false,
+  articles: new Array(9)
+    .fill(0)
+    .map((_, index) => ({
+      ...article, 
+      id: String(index),
+      key: index
+    })),
+  view: ArticleView.LIST
+};

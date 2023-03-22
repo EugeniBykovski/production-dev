@@ -1,18 +1,17 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import 'app/styles/index.scss'
-import { Article, ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import ArticleDetailsPage from './ArticleDetailsPage';
+import { Article, ArticleBlockType, ArticleType, ArticleView } from '../../model/types/article';
+import { ArticleListItem } from './ArticleListItem';
 
 export default {
-  title: 'pages/ArticleDetailsPage',
-  component: ArticleDetailsPage,
+  title: 'entities/Article/ArticleListItem',
+  component: ArticleListItem,
   argTypes: {
     backgroundColor: { control: 'color' },
   }
-} as ComponentMeta<typeof ArticleDetailsPage>;
+} as ComponentMeta<typeof ArticleListItem>;
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args: any) => <ArticleDetailsPage {...args} />;
+const Template: ComponentStory<typeof ArticleListItem> = (args: any) => <ArticleListItem {...args} />;
 
 const article: Article = {
   "id": "1",
@@ -60,10 +59,14 @@ const article: Article = {
   ]
 }
 
-export const Normal = Template.bind({});
-Normal.args = {};
-Normal.decorators = [StoreDecorator({
-  articleDetails: {
-    data: article
-  }
-})]
+export const List = Template.bind({});
+List.args = {
+  view: ArticleView.LIST,
+  article
+};
+
+export const Plate = Template.bind({});
+Plate.args = {
+  view: ArticleView.PLATE,
+  article
+};
