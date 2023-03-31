@@ -29,9 +29,7 @@ export const Page = ({ className, children, onScrollEnd }: PageProps) => {
     callback: onScrollEnd
   })
 
-  useInitialEffect(() => {
-    wrapperRef.current.scrollTop = scrollPosition
-  })
+  useInitialEffect(() => wrapperRef.current.scrollTop = scrollPosition)
 
   const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
     dispatch(uiActions.setScrollPosition({
@@ -47,7 +45,6 @@ export const Page = ({ className, children, onScrollEnd }: PageProps) => {
       onScroll={onScroll}
     >
       {children}
-      
       <div ref={triggerRef} />
     </section>
   )
