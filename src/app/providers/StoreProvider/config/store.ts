@@ -5,6 +5,7 @@ import { StateSchema, ThunkExtraArg } from './StateSchema'
 import { createReducerManager } from './reducerManager'
 import { $api } from 'shared/api/api'
 import { Reducer, CombinedState } from 'redux';
+import { uiReducer } from 'features/UI'
 
 export function createReduxStore(
   initialState?: StateSchema, 
@@ -13,7 +14,8 @@ export function createReduxStore(
   const rootReducer: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     counter: counterReducer,
-    user: userReducer
+    user: userReducer,
+    ui: uiReducer
   }
 
   const reducerManager = createReducerManager(rootReducer)
