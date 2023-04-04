@@ -9,3 +9,11 @@
 .btnBack {
   margin: 0;
 }
+
+.recommendations {
+  flex-wrap: nowrap;
+  margin-top: 1.5rem;
+
+  overflow-y: hidden;
+  overflow-x: auto;
+}

@@ -5,3 +5,11 @@ export {
 export {
   ArticleDetailsCommentSchema
 } from './model/types/ArticleDetailsCommentSchema';  
+
+export {
+  ArticleDetailsRecommendationsSchema
+} from './model/types/ArticlDetailsRecommendationsSchema';
+
+export {
+  ArticleDetailsPageSchema
+} from './model/types';
