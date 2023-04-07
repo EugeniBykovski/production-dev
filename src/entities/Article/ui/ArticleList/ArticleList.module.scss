@@ -9,5 +9,16 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
+
+  .card {
+    display: inline-flex;
+    margin-bottom: 30px;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
 }
 

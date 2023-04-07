@@ -6,6 +6,8 @@ import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { Text, TextSize } from 'shared/ui/Text/Text';
+import { List, ListRowProps, WindowScroller } from 'react-virtualized';
+import { PAGE_ID } from 'widgets/Page/Page';
 
 interface ArticleListProps {
   className?: string;
@@ -26,16 +28,28 @@ export const ArticleList = memo((props: ArticleListProps) => {
   const { className, articles, isLoading, view = ArticleView.PLATE, target } = props
   const { t } = useTranslation('/articles')
 
-  const renderArticle = (article: Article) => {
-    return (
-      <ArticleListItem 
-        target={target} 
-        article={article} 
-        view={view} 
-        className={cls.card} 
-        key={article.id} 
-      />
-    )
+  const isPlate = view === ArticleView.PLATE
+  const itemsPerRow = isPlate ? articles.length : 1
+  const rowCount = isPlate ? articles.length : Math.ceil(articles.length / itemsPerRow)
+
+  const rowRender = ({ index, key, style }: ListRowProps) => {    
+    const items = []
+    const fromIndex = index * itemsPerRow
+    const toIndex = Math.min(fromIndex + itemsPerRow, articles.length)
+
+    for (let i = fromIndex; i < toIndex; i++) {
+      items.push(
+        <ArticleListItem 
+          target={target} 
+          article={articles[i]} 
+          view={view} 
+          className={cls.card} 
+          key={'str' + i}
+        />
+      )
+    }
+
+    return <div className={cls.row} key={key} style={style}>{items}</div>
   }
 
   if (!isLoading && !articles.length) {
@@ -47,13 +61,24 @@ export const ArticleList = memo((props: ArticleListProps) => {
   }
 
   return (
-    <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-      {articles.length > 0 
-        ? articles.map(renderArticle)
-        : null
-      }
-
-      {isLoading && getSkeletons(view)}
-    </div>
+    <WindowScroller
+      scrollElement={document.getElementById(PAGE_ID) as Element}
+    >
+      {({ height, width, registerChild, isScrolling, onChildScroll }) => (
+        <div className={classNames(cls.ArticleList, {}, [className, cls[view]])} ref={registerChild}>
+          <List
+            width={width ? width - 140 : 750}
+            height={height ?? isPlate ? 335 : 750}
+            rowCount={rowCount}
+            rowHeight={isPlate ? 335 : 730}
+            rowRenderer={rowRender}
+            autoHeight
+            onScroll={onChildScroll}
+            isScrolling={isScrolling}
+          />
+          {isLoading && getSkeletons(view)}
+        </div>
+      )}
+    </WindowScroller>
   )
 })
